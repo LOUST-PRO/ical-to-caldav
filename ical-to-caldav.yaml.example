@@ -1,0 +1,27 @@
+# ical-to-caldav configuration example
+# Copy to ical-to-caldav.yaml and edit.
+
+# HTTP listen address
+listen: ":8080"
+
+# Badger database directory (supports ~)
+data_dir: "~/.local/share/ical-to-caldav"
+
+# Global refresh interval for all sources (overridable per source)
+refresh_interval: "15m"
+
+# iCal subscription sources
+sources:
+  # Example: Google Calendar public ICS feed
+  # Replace with your actual Google Calendar public ICS URL
+  - id: google-work
+    name: "Work Calendar"
+    url: "https://calendar.google.com/calendar/ical/YOUR_ID/public/basic.ics"
+    color: "#1a73e8"
+
+  # Example: academic calendar
+  - id: university
+    name: "University Calendar"
+    url: "https://example.edu/calendar.ics"
+    color: "#34a853"
+    refresh_interval: "1h"
